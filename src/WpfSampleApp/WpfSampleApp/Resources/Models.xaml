@@ -4,7 +4,8 @@
     xmlns:m="clr-namespace:WpfSampleApp.Models">
     <DataTemplate x:Key="UserViewTemplate" DataType="{x:Type m:User}">
         <StackPanel>
-            <TextBlock FontWeight="Heavy" Text="{Binding LastName}" />
+            <Label Content="{DynamicResource LastNameLabel}"></Label>
+            <TextBlock FontWeight="Heavy" Text="{Binding LastName}"/>
             <TextBlock Text="{Binding FirstName}" />
         </StackPanel>
     </DataTemplate>

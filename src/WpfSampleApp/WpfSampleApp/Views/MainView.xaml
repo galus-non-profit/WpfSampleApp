@@ -29,9 +29,9 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
-            <MenuItem Header="File">
+            <MenuItem Header="_File">
                 <MenuItem Header="ShowYesNoDialog" Command="{Binding ShowYesNoDialogCommand}"/>
-                <MenuItem Header="Exit" Command="{Binding FileExitCommand}"/>
+                <MenuItem Header="{DynamicResource FileExitLabel}" Command="{Binding FileExitCommand}"/>
             </MenuItem>
             <MenuItem Header="Context">
                 <MenuItem Header="Assign User" Command="{Binding ShowAssignUseriewCommand}"/>
