@@ -40,6 +40,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="GongSolutions.WPF.DragDrop, Version=3.0.0.0, Culture=neutral, PublicKeyToken=91f1945125b7a587, processorArchitecture=MSIL">
+      <HintPath>..\packages\gong-wpf-dragdrop.3.2.0\lib\net47\GongSolutions.WPF.DragDrop.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
@@ -102,9 +105,18 @@
     </ApplicationDefinition>
     <Compile Include="Behaviours\InvokeDelegateCommandAction.cs" />
     <Compile Include="Behaviours\WindowBehaviors.cs" />
+    <Compile Include="Modules\AssignUserModule.cs" />
+    <Compile Include="Modules\ViewModels\AssignUserViewModel.cs" />
+    <Compile Include="Modules\Views\AssignUserView.xaml.cs">
+      <DependentUpon>AssignUserView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\YesNoView.xaml.cs">
       <DependentUpon>YesNoView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Modules\Views\AssignUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\Views\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,6 +124,10 @@
     <Page Include="Modules\Views\UserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Models.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\EditUserView.xaml">
       <SubType>Designer</SubType>

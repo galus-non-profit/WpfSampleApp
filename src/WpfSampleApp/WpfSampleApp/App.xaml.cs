@@ -18,6 +18,7 @@
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             base.ConfigureModuleCatalog(moduleCatalog);
+            moduleCatalog.AddModule(typeof(AssignUserModule));
             moduleCatalog.AddModule(typeof(CustomerModule));
             moduleCatalog.AddModule(typeof(UserModule));
         }

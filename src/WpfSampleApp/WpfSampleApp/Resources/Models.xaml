@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:m="clr-namespace:WpfSampleApp.Models">
+    <DataTemplate x:Key="UserViewTemplate" DataType="{x:Type m:User}">
+        <StackPanel>
+            <TextBlock FontWeight="Heavy" Text="{Binding LastName}" />
+            <TextBlock Text="{Binding FirstName}" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

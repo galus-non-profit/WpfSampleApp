@@ -34,6 +34,7 @@
                 <MenuItem Header="Exit" Command="{Binding FileExitCommand}"/>
             </MenuItem>
             <MenuItem Header="Context">
+                <MenuItem Header="Assign User" Command="{Binding ShowAssignUseriewCommand}"/>
                 <MenuItem Header="Show Customer" Command="{Binding ShowCustomerViewCommand}"/>
                 <MenuItem Header="Show User" Command="{Binding ShowUserViewCommand}"/>
             </MenuItem>

@@ -61,6 +61,14 @@
 
         public ICommand FileExitCommand => new DelegateCommand(() => { this.IsClose = true; });
 
+        public ICommand ShowAssignUseriewCommand =>
+            new DelegateCommand<object>(o =>
+            {
+                this.regionManager.RequestNavigate("UserRegion", new Uri(nameof(AssignUserView), UriKind.RelativeOrAbsolute));
+
+            });
+
+
         public ICommand ShowUserViewCommand =>
             new DelegateCommand<object>(o =>
             {
