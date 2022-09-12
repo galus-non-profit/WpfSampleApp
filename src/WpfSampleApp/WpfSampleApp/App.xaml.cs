@@ -1,6 +1,7 @@
 ﻿namespace WpfSampleApp
 {
     using System.Windows;
+    using MvvmDialogs;
     using Prism.Ioc;
     using Prism.Modularity;
     using Prism.Unity;
@@ -26,6 +27,7 @@
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterInstance<IDialogService>(new DialogService());
             containerRegistry.RegisterInstance<IShellService>(this.Container.Resolve<ShellService>());
         }
     }

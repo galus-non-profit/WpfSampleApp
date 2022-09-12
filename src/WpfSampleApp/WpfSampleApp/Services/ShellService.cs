@@ -5,8 +5,6 @@ namespace WpfSampleApp.Services
 {
     using Prism.Events;
     using TableDependency.SqlClient;
-    using TableDependency.SqlClient.Base.Enums;
-    using WpfSampleApp.Events;
     using WpfSampleApp.Models;
 
     internal sealed class ShellService : IShellService
@@ -27,30 +25,30 @@ namespace WpfSampleApp.Services
         {
             this.eventAggregator = eventAggregator;
 
-            this.users = new SqlTableDependency<User>(this.connectionString, "User", "dbo");
-            this.users.OnChanged += (sender, args) =>
-            {
-                switch (args.ChangeType)
-                {
-                    case ChangeType.Delete:
-                        break;
-                    case ChangeType.Insert:
-                        var user = new User
-                        {
-                            Id = args.Entity.Id,
-                            FirstName = args.Entity.FirstName,
-                            LastName = args .Entity.LastName,
-                        };
-                        this.eventAggregator.GetEvent<InsertedUser>().Publish(user);
-                        break;
-                    case ChangeType.Update:
-                        //var student = this.GetStudentByStudentId(args.Entity.StudentId);
-                        //this.eventAggregator.GetEvent<UpdateStudentClassRequest>().Publish(student);
-                        break;
-                }
-            };
+            //this.users = new SqlTableDependency<User>(this.connectionString, "User", "dbo");
+            //this.users.OnChanged += (sender, args) =>
+            //{
+            //    switch (args.ChangeType)
+            //    {
+            //        case ChangeType.Delete:
+            //            break;
+            //        case ChangeType.Insert:
+            //            var user = new User
+            //            {
+            //                Id = args.Entity.Id,
+            //                FirstName = args.Entity.FirstName,
+            //                LastName = args.Entity.LastName,
+            //            };
+            //            this.eventAggregator.GetEvent<InsertedUser>().Publish(user);
+            //            break;
+            //        case ChangeType.Update:
+            //            //var student = this.GetStudentByStudentId(args.Entity.StudentId);
+            //            //this.eventAggregator.GetEvent<UpdateStudentClassRequest>().Publish(student);
+            //            break;
+            //    }
+            //};
 
-            this.users.Start();
+            //this.users.Start();
         }
 
         public void Dispose()
